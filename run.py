@@ -60,6 +60,7 @@ def home():
 def home(id):
     for eachNews in data:
         if(eachNews['id'] == id):
+            
             return render_template('news.html', news = eachNews)
     return render_template('home.html', posts = data)
 
