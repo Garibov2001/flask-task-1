@@ -23,16 +23,18 @@
         </div>
     </nav>
     <div class='container'>
-        <main class='d-flex mt-5'>
-            {% for  %}
-            <div class="card" style="width: 18rem;">                
+        <h1 class="d-flex justify-content-center mt-2">Hot news</h1>
+        <main class='d-flex justify-content-around flex-wrap  mt-5'>    
+            {% for eachPost in posts %}
+            <div class="card m-2" style="width: 18rem;">                
                 <div class="card-body">
-                  <h5 class="card-title">Card title</h5>
-                  <small class="text-muted">13.11.2020</small>
-                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                  <a href="#" class="btn btn-primary">Go somewhere</a>
+                  <h5 class="card-title">{{eachPost.title}}</h5>
+                  <small class="text-muted">{{eachPost.date}}</small>
+                  <p class="card-text">{{eachPost.content}}</p>
+                  <a href="{{url_for('news',id = eachPost.id)}}" class="btn btn-primary">More</a>
                 </div>
               </div>
+            {% endfor %}
         </main>
     </div>
 
